@@ -27,9 +27,11 @@ before_install:
 install:
   - conda create -c mwcraig --yes -n py34 python=3.4 pip numpy scipy
   - source activate py34
-  - pip install pip install https://github.com/hgrecco/pint/archive/master.zip
-  - wget https://github.com/rkingsbury/pyEQL/archive/0.3.1.zip
-  - unzip 0.3.1.zip
+  - pip install https://github.com/hgrecco/pint/archive/master.zip
 
 script:
-  - cd pyEQL; python setup.py test
+  # pyEQL
+  - git clone --depth 1 --branch 0.3.1 https://github.com/rkingsbury/pyEQL
+  - cd pyEQL
+  - python -m unittest pyEQL/tests/*
+
