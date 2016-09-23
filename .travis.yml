@@ -25,7 +25,7 @@ before_install:
   - export ENV_NAME=travis
 
 install:
-  - conda create -c mwcraig --yes -n test python=$TRAVIS_PYTHON_VERSION pip numpy scipy
+  - conda create -c conda-forge --yes -n test python=$TRAVIS_PYTHON_VERSION pip numpy scipy
   - source activate test
   - pip install https://github.com/hgrecco/pint/archive/master.zip
 
